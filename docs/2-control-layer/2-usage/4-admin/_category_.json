@@ -1,0 +1,10 @@
+{
+  "label": "Admin tasks",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Tutorial overview"
+  }
+}
