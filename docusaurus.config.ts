@@ -19,7 +19,7 @@ const config: Config = {
   url: url,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs/',
+  baseUrl: '/',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -40,6 +40,8 @@ const config: Config = {
           sidebarCollapsed: false,
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Serve the docs at the site's root
+          showLastUpdateTime: true,
+          includeCurrentVersion: true,
         },
         blog: false, // Disable the blog plugin
         theme: {

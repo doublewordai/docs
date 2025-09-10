@@ -14,39 +14,35 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  */
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
-    // Overview Section
+    // Home Section
     {
       type: 'doc',
-      id: 'overview/index',
-      label: '📋 Overview',
-      className: 'sidebar-overview-section',
-    },
-    
-    // Spacer for visual separation
-    {
-      type: 'html',
-      value: '<div class="sidebar-divider"></div>',
+      id: 'home/index',
+      label: 'Home',
     },
     
     // Control Layer Section
     {
       type: 'category',
-      label: '🛡️ Control Layer',
-      className: 'sidebar-section-header control-layer-section',
+      label: 'Control Layer',
+      className: 'sidebar-section-header control-layer-section control-layer-with-icon',
       link: {
         type: 'doc',
         id: 'control-layer/index',
       },
-      collapsible: true,
-      collapsed: true,
+      collapsible: false,
+      collapsed: false,
       items: [
         {
           type: 'category',
           label: 'Deployment',
+          link: {
+            type: 'doc',
+            id: 'control-layer/deployment/index',
+          },
           collapsible: true,
           collapsed: false,
           items: [
-            'control-layer/deployment/index',
             'control-layer/deployment/docker-compose',
             'control-layer/deployment/kubernetes',
           ],
@@ -54,10 +50,13 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category', 
           label: 'Usage',
+          link: {
+            type: 'doc',
+            id: 'control-layer/usage/index',
+          },
           collapsible: true,
           collapsed: false,
           items: [
-            'control-layer/usage/index',
             'control-layer/usage/models-and-access',
             'control-layer/usage/playground',
             'control-layer/usage/api-integration',
@@ -74,10 +73,13 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Reference',
+          link: {
+            type: 'doc',
+            id: 'control-layer/reference/index',
+          },
           collapsible: true,
-          collapsed: true,
+          collapsed: false,
           items: [
-            'control-layer/reference/index',
             'control-layer/reference/configuration',
           ],
         },
@@ -93,42 +95,49 @@ const sidebars: SidebarsConfig = {
     // Inference Stack Section
     {
       type: 'category',
-      label: '⚡ Inference Stack',
-      className: 'sidebar-section-header inference-stack-section',
+      label: 'Inference Stack',
+      className: 'sidebar-section-header inference-stack-section inference-stack-with-icon',
       link: {
         type: 'doc',
         id: 'inference-stack/index',
       },
-      collapsible: true,
-      collapsed: true,
+      collapsible: false,
+      collapsed: false,
       items: [
         {
           type: 'category',
           label: 'Deployment',
+          link: {
+            type: 'doc',
+            id: 'inference-stack/deployment/index',
+          },
           collapsible: true,
           collapsed: false,
           items: [
-            'inference-stack/deployment/index',
-            'inference-stack/deployment/docker-compose',
-            'inference-stack/deployment/kubernetes',
+            'inference-stack/deployment/first',
           ],
         },
         {
           type: 'category',
           label: 'Usage', 
+          link: {
+            type: 'doc',
+            id: 'inference-stack/usage/index',
+          },
           collapsible: true,
           collapsed: false,
-          items: [
-            'inference-stack/usage/index',
-          ],
+          items: [],
         },
         {
           type: 'category',
           label: 'Reference',
+          link: {
+            type: 'doc',
+            id: 'inference-stack/reference/index',
+          },
           collapsible: true,
-          collapsed: true,
+          collapsed: false,
           items: [
-            'inference-stack/reference/index',
             'inference-stack/reference/configuration',
           ],
         },

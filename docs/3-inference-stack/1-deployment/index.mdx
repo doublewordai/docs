@@ -8,7 +8,23 @@ import DocCardList from '@theme/DocCardList';
 # Deploying the Doubleword Control Layer
 
 ---
-Take a look at the deployment guides below to get started with deploying the Doubleword Control Layer in your environment.
+
+These guides provides instructions for deploying the Doubleword Inference Stack to Kubernetes using Helm.
+
+Kubernetes deployment is ideal for organizations requiring high availability, automatic scaling, and integration with existing Kubernetes infrastructure. For simpler single-server deployments, we recommend running containers directly.
+
+## Prerequisites
+
+Before beginning your deployment, ensure you have the necessary infrastructure and credentials prepared.
+
+### System Requirements
+
+Your Kubernetes cluster must be running version 1.24 or later with kubectl configured to access your target cluster. You'll also need Helm 3.8 or later installed for managing the deployment.
+
+### Node Availability
+
+Ensure that your Kubernetes nodes have sufficient resources (CPU, memory, and disk space) to run the Inference Stack components. It's recommended to use dedicated nodes for production deployments.
 
 ---
+
 <DocCardList />

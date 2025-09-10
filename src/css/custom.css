@@ -8,14 +8,14 @@
 
 /* Light theme (default) */
 :root {
-  /* Primary brand colors */
-  --ifm-color-primary: #fe6767;
-  --ifm-color-primary-dark: #e54d4d;
-  --ifm-color-primary-darker: #cc3636;
-  --ifm-color-primary-darkest: #a62b2b;
-  --ifm-color-primary-light: #ff8a8a;
-  --ifm-color-primary-lighter: #ffb3b3;
-  --ifm-color-primary-lightest: #ffd4d4;
+  /* Primary brand colors - Professional slate blue palette */
+  --ifm-color-primary: #475569;
+  --ifm-color-primary-dark: #334155;
+  --ifm-color-primary-darker: #1e293b;
+  --ifm-color-primary-darkest: #0f172a;
+  --ifm-color-primary-light: #64748b;
+  --ifm-color-primary-lighter: #94a3b8;
+  --ifm-color-primary-lightest: #cbd5e1;
 
   /* Background colors */
   --ifm-background-color: #fafaf9;
@@ -46,33 +46,33 @@
   --ifm-code-font-size: 95%;
   --ifm-border-radius: 0.5rem;
   --ifm-navbar-height: 4rem;
-  --docusaurus-highlighted-code-line-bg: rgba(254, 103, 103, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(71, 85, 105, 0.1);
 
   /* Card styling */
   --ifm-card-background-color: #ffffff;
   --ifm-card-border-radius: 0.75rem;
 
   /* Link colors */
-  --ifm-link-color: #fe6767;
-  --ifm-link-hover-color: #e54d4d;
+  --ifm-link-color: #475569;
+  --ifm-link-hover-color: #334155;
 
   /* Success, warning, danger colors using brand palette */
-  --ifm-color-success: #76c08f;
-  --ifm-color-warning: #fcda7e;
-  --ifm-color-danger: #fe6767;
-  --ifm-color-info: #6d71f5;
+  --ifm-color-success: #22c55e;
+  --ifm-color-warning: #f59e0b;
+  --ifm-color-danger: #ef4444;
+  --ifm-color-info: #475569;
 }
 
 /* Dark theme */
 [data-theme='dark'] {
-  /* Primary colors - slightly lighter for dark theme */
-  --ifm-color-primary: #ff8a8a;
-  --ifm-color-primary-dark: #fe6767;
-  --ifm-color-primary-darker: #e54d4d;
-  --ifm-color-primary-darkest: #cc3636;
-  --ifm-color-primary-light: #ffb3b3;
-  --ifm-color-primary-lighter: #ffd4d4;
-  --ifm-color-primary-lightest: #ffe8e8;
+  /* Primary colors - adjusted for dark theme */
+  --ifm-color-primary: #64748b;
+  --ifm-color-primary-dark: #475569;
+  --ifm-color-primary-darker: #334155;
+  --ifm-color-primary-darkest: #1e293b;
+  --ifm-color-primary-light: #94a3b8;
+  --ifm-color-primary-lighter: #cbd5e1;
+  --ifm-color-primary-lightest: #e2e8f0;
 
   /* Background colors for dark theme */
   --ifm-background-color: #1a1818;
@@ -91,14 +91,14 @@
   --ifm-color-emphasis-100: #1a1818;
 
   /* Code highlighting for dark theme */
-  --docusaurus-highlighted-code-line-bg: rgba(255, 138, 138, 0.2);
+  --docusaurus-highlighted-code-line-bg: rgba(100, 116, 139, 0.2);
 
   /* Card styling for dark theme */
   --ifm-card-background-color: #2e2c26;
 
   /* Link colors for dark theme */
-  --ifm-link-color: #ff8a8a;
-  --ifm-link-hover-color: #ffb3b3;
+  --ifm-link-color: #64748b;
+  --ifm-link-hover-color: #94a3b8;
 }
 
 /* Custom component styles */
@@ -122,7 +122,7 @@
 }
 
 .menu__link--active {
-  background-color: rgba(254, 103, 103, 0.1);
+  background-color: rgba(71, 85, 105, 0.1);
   border-left: 3px solid var(--ifm-color-primary);
   font-weight: 500;
 }
@@ -274,10 +274,10 @@ h1 {
 
 /* Clean hover effects without annoying tooltips */
 
-/* Sidebar section styling */
+/* Sidebar section styling - ultra compact */
 .sidebar-divider {
-  height: 32px;
-  margin: 1.5rem 0 2rem 0;
+  height: 8px;
+  margin: 0.25rem 0 0.5rem 0;
   position: relative;
 }
 
@@ -285,26 +285,26 @@ h1 {
   content: '';
   position: absolute;
   top: 50%;
-  left: 1rem;
-  right: 1rem;
-  height: 2px;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 1px;
   background: linear-gradient(to right, transparent, var(--ifm-color-emphasis-300), transparent);
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
-/* Section headers styling - dark by default */
+/* Section headers styling - compact and dense */
 .sidebar-section-header > .menu__list-item-collapsible > .menu__link {
-  font-weight: 800 !important;
-  font-size: 1.2rem !important;
-  padding: 1rem 1.25rem !important;
-  margin: 1rem 0 1.5rem 0 !important;
-  border-radius: 0.75rem !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  padding: 0.35rem 0.6rem !important;
+  margin: 0.25rem 0 0.5rem 0 !important;
+  border-radius: 0.4rem !important;
   background: linear-gradient(135deg, var(--ifm-color-emphasis-200), var(--ifm-color-emphasis-300)) !important;
-  border-left: 6px solid var(--ifm-color-emphasis-400) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-  transition: all 0.3s ease !important;
+  border-left: 3px solid var(--ifm-color-emphasis-400) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.3px !important;
   color: var(--ifm-font-color-base) !important;
   filter: none !important;
 }
@@ -323,84 +323,73 @@ h1 {
   filter: grayscale(0.5) opacity(0.7) !important;
 }
 
-/* Selected/active section - red styling and restore icon colors */
+/* Selected/active section - professional styling and restore icon colors */
 .control-layer-section > .menu__list-item-collapsible > .menu__link--active,
 .inference-stack-section > .menu__list-item-collapsible > .menu__link--active {
   border-left-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary-darker) !important;
-  background: linear-gradient(135deg, rgba(254, 103, 103, 0.1), rgba(254, 103, 103, 0.15)) !important;
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.1), rgba(71, 85, 105, 0.15)) !important;
   filter: none !important;
 }
 
-/* Hover effects - red styling and restore icon colors */
+/* Hover effects - professional styling and restore icon colors */
 .sidebar-section-header > .menu__list-item-collapsible > .menu__link:hover {
   transform: translateX(4px) scale(1.02) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
   border-left-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary-darker) !important;
-  background: linear-gradient(135deg, rgba(254, 103, 103, 0.1), rgba(254, 103, 103, 0.15)) !important;
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.1), rgba(71, 85, 105, 0.15)) !important;
   filter: none !important;
 }
 
-/* Full-width layout for landing page */
-[data-route="/"] .col--3 {
+/* Homepage Layout: Let Docusaurus handle sidebar layout normally */
+/* Removed all layout-interfering rules to allow normal sidebar behavior */
+
+/* Only hide right-side TOC if needed, but don't interfere with main sidebar */
+[data-route="/"] .theme-doc-toc-desktop {
   display: none !important;
-}
-
-[data-route="/"] .col:not(.col--3) {
-  max-width: none !important;
-  flex: 0 0 100% !important;
-}
-
-[data-route="/"] .main-wrapper .container {
-  max-width: none !important;
-}
-
-/* Alternative selectors if the above don't work */
-body[data-path="/"] .theme-doc-toc-desktop,
-body[data-path="/"] .table-of-contents {
-  display: none !important;
-}
-
-body[data-path="/"] .theme-doc-markdown {
-  max-width: none !important;
 }
 
 /* Homepage Hero Styling */
 .homepage-hero {
-  background: linear-gradient(135deg, var(--ifm-color-primary-lightest), var(--ifm-background-color));
+  background: var(--ifm-background-surface-color);
   border-radius: 1rem;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem 2rem;
+  margin: 0 auto 1.5rem auto;
+  padding: 2rem 1.5rem;
   text-align: center;
   border: 1px solid var(--ifm-color-emphasis-200);
+  max-width: 1200px;
+  box-shadow: 0 4px 16px rgba(71, 85, 105, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
   color: var(--ifm-color-primary-darker);
-  line-height: 1;
+  line-height: 1.1;
   white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
-  color: var(--ifm-color-primary-darker);
-  margin: 0;
-  font-weight: 400;
-  max-width: 1000px;
+  font-size: 1.4rem;
+  color: var(--ifm-color-primary-dark);
   margin: 0 auto;
-  line-height: 1.3;
+  font-weight: 400;
+  max-width: 800px;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
 /* Visitor Paths Section */
 .visitor-paths {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  gap: 1.5rem;
+  margin-bottom: 0.25rem;
   align-items: stretch;
   min-height: 280px;
 }
@@ -409,7 +398,7 @@ body[data-path="/"] .theme-doc-markdown {
 .visitor-paths-horizontal {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: stretch;
   min-height: 280px;
 }
@@ -440,7 +429,7 @@ body[data-path="/"] .theme-doc-markdown {
   background: var(--ifm-background-surface-color);
   border: 2px solid var(--ifm-color-emphasis-200);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.75rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -456,7 +445,7 @@ body[data-path="/"] .theme-doc-markdown {
   background: var(--ifm-background-surface-color);
   border: 2px solid var(--ifm-color-emphasis-200);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.75rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -470,13 +459,14 @@ body[data-path="/"] .theme-doc-markdown {
 .path-icon {
   text-align: center;
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
 }
 
 .path-card:hover .path-icon {
-  transform: scale(1.1);
+  /* Remove transform animations for icons - keep them static */
+  /* transform: scale(1.1); */
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
 }
 
@@ -508,7 +498,7 @@ body[data-path="/"] .theme-doc-markdown {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--ifm-color-emphasis-600);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.2rem 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -535,7 +525,8 @@ body[data-path="/"] .theme-doc-markdown {
 }
 
 .path-benefits li strong {
-  color: var(--ifm-color-primary-darker);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .path-description {
@@ -576,7 +567,7 @@ body[data-path="/"] .theme-doc-markdown {
 .cta-primary:hover {
   background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-darker));
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(254, 103, 103, 0.3);
+  box-shadow: 0 6px 20px rgba(71, 85, 105, 0.3);
   color: white;
   text-decoration: none;
 }
@@ -649,7 +640,7 @@ body[data-path="/"] .theme-doc-markdown {
   border-radius: 1.5rem;
   font-weight: 700;
   font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(254, 103, 103, 0.3);
+  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.3);
   position: relative;
   z-index: 1;
 }
@@ -677,29 +668,31 @@ body[data-path="/"] .theme-doc-markdown {
 /* Homepage Footer */
 .homepage-footer {
   background: linear-gradient(135deg, var(--ifm-color-emphasis-100), var(--ifm-color-emphasis-200));
-  border-radius: 1.5rem;
-  padding: 3rem 2rem;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
   text-align: center;
-  margin-top: 3rem;
+  margin: 0.5rem auto 0 auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 16px rgba(71, 85, 105, 0.08);
 }
 
 .homepage-footer h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   color: var(--ifm-color-primary-darker);
 }
 
 .homepage-footer p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   color: var(--ifm-color-emphasis-700);
 }
 
 .contact-cta {
   background: var(--ifm-background-surface-color);
-  padding: 1.5rem;
-  border-radius: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
   border: 2px solid var(--ifm-color-primary-light);
   display: inline-block;
 }
@@ -717,12 +710,18 @@ body[data-path="/"] .theme-doc-markdown {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .homepage-hero {
+    padding: 1.5rem 1.0rem;
+    margin-bottom: 1.5rem;
+  }
+  
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    white-space: normal;
   }
   
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .path-actions {
@@ -734,94 +733,91 @@ body[data-path="/"] .theme-doc-markdown {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
+  
+  /* Let Docusaurus handle homepage sidebar layout on mobile naturally */
 }
 
-/* Section content - add more spacing and indentation */
+/* Section content - ultra compact spacing and indentation */
 .sidebar-section-header .menu__list {
-  margin-top: 1rem !important;
-  padding-left: 1rem !important;
-  border-left: 2px solid var(--ifm-color-emphasis-300) !important;
-  margin-left: 1rem !important;
-  margin-bottom: 2rem !important;
+  margin-top: 0.25rem !important;
+  padding-left: 0.5rem !important;
+  border-left: 1px solid var(--ifm-color-emphasis-300) !important;
+  margin-left: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
-/* Introduction items styling - make them stand out */
+/* Introduction items styling - compact but distinct */
 .sidebar-section-header .menu__link[href$="/control-layer/"],
 .sidebar-section-header .menu__link[href$="/inference-stack/"] {
-  background: linear-gradient(135deg, rgba(254, 103, 103, 0.15), rgba(254, 103, 103, 0.2)) !important;
-  border-radius: 0.5rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 1rem !important;
-  padding: 0.75rem 1rem !important;
-  border-left: 3px solid var(--ifm-color-primary) !important;
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.12), rgba(71, 85, 105, 0.18)) !important;
+  border-radius: 0.3rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.4rem !important;
+  padding: 0.35rem 0.6rem !important;
+  border-left: 2px solid var(--ifm-color-primary) !important;
 }
 
-/* Subsection categories - cleaner styling */
+/* Subsection categories - very compact styling */
 .sidebar-section-header .menu__list .menu__list-item {
-  margin: 0.75rem 0 !important;
+  margin: 0.2rem 0 !important;
 }
 
 .sidebar-section-header .menu__list .menu__link {
-  font-size: 0.95rem !important;
-  padding: 0.65rem 1rem !important;
-  border-radius: 0.5rem !important;
-  font-weight: 500 !important;
-  transition: all 0.2s ease !important;
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.5rem !important;
+  border-radius: 0.3rem !important;
+  font-weight: 450 !important;
+  transition: all 0.15s ease !important;
 }
 
 .sidebar-section-header .menu__list .menu__link:hover {
   background-color: var(--ifm-color-emphasis-200) !important;
-  transform: translateX(2px) !important;
+  transform: translateX(1px) !important;
 }
 
-/* Add extra spacing after each main section */
+/* Minimal spacing after each main section */
 .sidebar-section-header {
-  margin-bottom: 2rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
-/* Overview section - dark by default, consistent with other sections */
+/* Overview section - compact and consistent */
 .sidebar-overview-section > .menu__link {
-  font-weight: 800 !important;
-  font-size: 1.2rem !important;
-  padding: 1rem 1.25rem !important;
-  margin: 0.5rem 0 2rem 0 !important;
-  border-radius: 0.75rem !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  padding: 0.35rem 0.6rem !important;
+  margin: 0.25rem 0 0.75rem 0 !important;
+  border-radius: 0.4rem !important;
   background: linear-gradient(135deg, var(--ifm-color-emphasis-200), var(--ifm-color-emphasis-300)) !important;
-  border-left: 6px solid var(--ifm-color-emphasis-400) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-  transition: all 0.3s ease !important;
+  border-left: 3px solid var(--ifm-color-emphasis-400) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease !important;
   text-align: left !important;
   color: var(--ifm-font-color-base) !important;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.3px !important;
   text-transform: uppercase !important;
 }
 
 .sidebar-overview-section > .menu__link:hover {
   transform: translateX(4px) scale(1.02) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
-  background: linear-gradient(135deg, rgba(254, 103, 103, 0.1), rgba(254, 103, 103, 0.15)) !important;
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.1), rgba(71, 85, 105, 0.15)) !important;
   border-left-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary-darker) !important;
   filter: none !important;
 }
 
 .sidebar-overview-section > .menu__link--active {
-  background: linear-gradient(135deg, rgba(254, 103, 103, 0.15), rgba(254, 103, 103, 0.2)) !important;
+  background: linear-gradient(135deg, rgba(71, 85, 105, 0.15), rgba(71, 85, 105, 0.2)) !important;
   border-left-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary-darker) !important;
   filter: none !important;
   border-left-color: var(--ifm-color-primary-dark) !important;
-  box-shadow: 0 4px 12px rgba(254, 103, 103, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.3) !important;
 }
 
-/* Hide only automatic Docusaurus titles (not our custom ones) */
-.markdown h1:first-child:not(.page-header-with-github h1),
-article > .markdown > h1:first-child {
-  display: none !important;
-}
-
-/* Ensure our custom header titles are visible */
-.page-header-with-github h1 {
+/* Ensure custom header titles are visible */
+.page-header-with-github h1,
+.page-header-with-custom-icon h1 {
   display: block !important;
 }
 
@@ -848,14 +844,14 @@ article > .markdown > h1:first-child {
   border-radius: 50%;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(254, 103, 103, 0.3);
+  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.3);
   position: relative;
 }
 
 .github-icon-link:hover {
   background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-darker));
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 16px rgba(254, 103, 103, 0.4);
+  box-shadow: 0 4px 16px rgba(71, 85, 105, 0.4);
   text-decoration: none;
 }
 
@@ -910,7 +906,7 @@ article > .markdown > h1:first-child {
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(254, 103, 103, 0.3);
+  box-shadow: 0 2px 8px rgba(71, 85, 105, 0.3);
   border: none;
 }
 
@@ -919,7 +915,7 @@ article > .markdown > h1:first-child {
   color: white;
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(254, 103, 103, 0.4);
+  box-shadow: 0 4px 16px rgba(71, 85, 105, 0.4);
 }
 
 .github-repo-button svg {
@@ -989,4 +985,663 @@ article > .markdown > h1:first-child {
   .header-github-link:after {
     display: none;
   }
+}
+
+/* Ultra-Compact Sidebar Styling */
+/* Reduce overall padding and margins for sidebar items - more aggressive */
+.menu__list-item {
+  margin-bottom: 0.15rem !important;
+}
+
+.menu__link {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Make main section headers more compact while keeping emoji icons */
+.sidebar-section-header > .menu__list-item-collapsible > .menu__link,
+.sidebar-overview-section > .menu__link {
+  font-size: 0.9rem !important;
+  padding: 0.4rem 0.75rem !important;
+  margin: 0.4rem 0 0.6rem 0 !important;
+}
+
+/* Tighten category spacing aggressively */
+.sidebar-section-header {
+  margin-bottom: 0.75rem !important;
+}
+
+.sidebar-section-header .menu__list {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.75rem !important;
+  padding-left: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Make nested items very compact */
+.sidebar-section-header .menu__list .menu__list-item {
+  margin: 0.2rem 0 !important;
+}
+
+.sidebar-section-header .menu__list .menu__link {
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.5rem !important;
+}
+
+/* Reduce introduction items padding significantly */
+.sidebar-section-header .menu__link[href$="/control-layer/"],
+.sidebar-section-header .menu__link[href$="/inference-stack/"] {
+  padding: 0.35rem 0.6rem !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* Very compact divider spacing */
+.sidebar-divider {
+  height: 12px !important;
+  margin: 0.5rem 0 0.75rem 0 !important;
+}
+
+/* Reduce font size for table of contents more */
+.table-of-contents__link {
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+  padding: 0.1rem 0 !important;
+}
+
+/* Make collapsible sections very compact */
+.menu__list-item-collapsible {
+  margin-bottom: 0.3rem !important;
+}
+
+/* Very compact nested list spacing */
+.menu__list .menu__list {
+  padding-left: 0.5rem !important;
+  margin-top: 0.15rem !important;
+}
+
+/* Additional ultra-compact styling for maximum density */
+.menu__list-item-collapsible .menu__link {
+  padding-right: 1.5rem !important; /* Reduce right padding for caret space */
+}
+
+/* Reduce caret button size */
+.menu__caret {
+  right: 0.25rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+}
+
+/* Make arrow smaller */
+.menu__caret::after {
+  border-left: 3px solid transparent !important;
+  border-right: 3px solid transparent !important;
+  border-top: 4px solid var(--ifm-font-color-base) !important;
+}
+
+/* Tighter line heights for better density */
+.sidebar-section-header .menu__link,
+.sidebar-overview-section > .menu__link {
+  line-height: 1.1 !important;
+}
+
+/* Reduce spacing in active/hover states */
+.sidebar-overview-section > .menu__link:hover {
+  transform: translateX(2px) scale(1.01) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+.sidebar-section-header > .menu__list-item-collapsible > .menu__link:hover {
+  transform: translateX(2px) scale(1.01) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Reduce overall sidebar width significantly for more content space */
+@media (min-width: 997px) {
+  .theme-doc-sidebar-container {
+    min-width: 240px !important;
+    width: 240px !important;
+  }
+}
+
+/* Fix sidebar arrow bleeding and containment issues */
+
+/* Ensure collapsible items container doesn't overflow */
+.menu__list-item-collapsible {
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the menu link takes most of the width but leaves space for caret */
+.menu__list-item-collapsible .menu__link {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  padding-right: 2rem !important; /* Reserve space for caret */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+/* Style the dropdown caret button */
+.menu__caret {
+  position: absolute !important;
+  right: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  border-radius: 0.25rem !important;
+  transition: background-color 0.2s ease !important;
+  flex-shrink: 0 !important;
+  z-index: 1 !important;
+}
+
+/* Create the caret arrow using CSS */
+.menu__caret::after {
+  content: '' !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 4px solid transparent !important;
+  border-right: 4px solid transparent !important;
+  border-top: 5px solid var(--ifm-font-color-base) !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* Rotate arrow when expanded */
+.menu__list-item:not(.menu__list-item--collapsed) .menu__caret::after {
+  transform: rotate(180deg) !important;
+}
+
+/* Hover effects for caret */
+.menu__caret:hover {
+  background-color: var(--ifm-color-emphasis-200) !important;
+}
+
+.menu__caret:hover::after {
+  border-top-color: var(--ifm-color-primary) !important;
+}
+
+/* Ensure caret doesn't interfere with link clicks */
+.menu__list-item-collapsible .menu__link:not(.menu__link--sublist-caret) {
+  pointer-events: auto !important;
+}
+
+/* Fix caret positioning for sublist-caret style (inline arrow) */
+.menu__link--sublist-caret {
+  position: relative !important;
+  padding-right: 2rem !important;
+}
+
+.menu__link--sublist-caret::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 0.75rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 4px solid transparent !important;
+  border-right: 4px solid transparent !important;
+  border-top: 5px solid var(--ifm-font-color-base) !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* Rotate inline caret when expanded */
+.menu__list-item:not(.menu__list-item--collapsed) .menu__link--sublist-caret::after {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Hover effect for inline caret */
+.menu__link--sublist-caret:hover::after {
+  border-top-color: var(--ifm-color-primary) !important;
+}
+
+/* Ensure sidebar container has proper overflow handling */
+.theme-doc-sidebar-container {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* Fix menu list items to prevent horizontal overflow */
+.menu__list-item {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.menu__list {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Additional containment for nested items */
+.menu__list .menu__list {
+  padding-left: 0.75rem !important;
+  margin-left: 0.75rem !important;
+  border-left: 1px solid var(--ifm-color-emphasis-300) !important;
+}
+
+/* Ensure text doesn't overflow in compact sidebar */
+.sidebar-section-header .menu__list .menu__link,
+.menu__link {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+/* SVG Icons for Sidebar Sections */
+
+/* Overview icon - document/clipboard */
+.sidebar-overview-with-icon > .menu__link:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 2a2 2 0 0 0-2 2v1H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V4a2 2 0 0 0-2-2H8zM7 5V4h10v1h1a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h2zm2 4a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9zm0 4a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9zm0 4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H9z' fill='%23000000'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Control Layer icon - settings/control */
+.control-layer-with-icon > .menu__list-item-collapsible > .menu__link:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.013 2.25c.734.008 1.465.093 2.182.253a.75.75 0 0 1 .582.649l.17 1.527a1.384 1.384 0 0 0 1.928 1.116l1.4-.615a.75.75 0 0 1 .85.174 9.792 9.792 0 0 1 2.204 3.792.75.75 0 0 1-.271.825l-1.242.916a1.381 1.381 0 0 0 0 2.226l1.243.915a.75.75 0 0 1 .272.826 9.797 9.797 0 0 1-2.204 3.792.75.75 0 0 1-.848.175l-1.407-.617a1.38 1.38 0 0 0-1.926 1.114l-.169 1.526a.75.75 0 0 1-.572.647 9.518 9.518 0 0 1-4.406 0 .75.75 0 0 1-.572-.647l-.168-1.524a1.382 1.382 0 0 0-1.929-1.11l-1.405.616a.75.75 0 0 1-.849-.174 9.792 9.792 0 0 1-2.204-3.796.75.75 0 0 1 .272-.826l1.243-.916a1.38 1.38 0 0 0 0-2.226l-1.243-.914a.75.75 0 0 1-.271-.826 9.792 9.792 0 0 1 2.204-3.792.75.75 0 0 1 .85-.174l1.4.615a1.387 1.387 0 0 0 1.93-1.118l.17-1.526a.75.75 0 0 1 .583-.65c.717-.159 1.45-.243 2.201-.252zm0 1.5a8.028 8.028 0 0 0-1.878.22l-.128 1.151a2.887 2.887 0 0 1-4.003 2.31l-1.063-.467a8.25 8.25 0 0 0-1.5 2.573l.94.693a2.882 2.882 0 0 1 0 4.648l-.94.693c.417.921.923 1.790 1.5 2.565l1.063-.467a2.883 2.883 0 0 1 4.003 2.312l.128 1.15c.617.056 1.240.056 1.857 0l.128-1.15a2.885 2.885 0 0 1 4.006-2.312l1.068.469a8.25 8.25 0 0 0 1.499-2.573l-.94-.693a2.882 2.882 0 0 1 0-4.648l.94-.693a8.25 8.25 0 0 0-1.5-2.565l-1.068.467a2.884 2.884 0 0 1-4.006-2.31l-.128-1.152a8.024 8.024 0 0 0-1.878-.22zM12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zM9.75 12a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0z' fill='%23000000'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Inference Stack icon - processor/chip */
+.inference-stack-with-icon > .menu__list-item-collapsible > .menu__link:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H8zM7 6h10v12H7V6zm5 2a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1zM3 8a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1zm18 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1zM9 3a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1zm0 18a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z' fill='%23000000'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Homepage Path Icon Images */
+.path-icon-image {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  margin: 0 auto 0.5rem auto;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+}
+
+.path-card:hover .path-icon-image {
+  /* Remove transform animations for images - keep them static */
+  /* transform: scale(1.1); */
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Override sidebar icons to use webp images */
+/* Control Layer sidebar icon with webp */
+.control-layer-with-icon > .menu__list-item-collapsible > .menu__link:before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  background-image: url('/img/control-layer-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+  /* Remove mask properties since we're using a direct image */
+  mask-image: none;
+  background-color: transparent;
+}
+
+/* Inference Stack sidebar icon with webp */
+.inference-stack-with-icon > .menu__list-item-collapsible > .menu__link:before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+  background-image: url('/img/inference-stack-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+  /* Remove mask properties since we're using a direct image */
+  mask-image: none;
+  background-color: transparent;
+}
+
+/* Ensure sidebar icons maintain proper styling on hover and active states */
+.control-layer-with-icon > .menu__list-item-collapsible > .menu__link:hover:before,
+.control-layer-with-icon > .menu__list-item-collapsible > .menu__link--active:before,
+.inference-stack-with-icon > .menu__list-item-collapsible > .menu__link:hover:before,
+.inference-stack-with-icon > .menu__list-item-collapsible > .menu__link--active:before {
+  opacity: 1;
+  filter: brightness(1.1) saturate(1.1);
+}
+
+/* Add root-level body styling for homepage black background */
+[data-route="/"] body {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-route="/"] .main-wrapper {
+  background: #000000 !important;
+}
+
+[data-route="/"] .container {
+  background: #000000 !important;
+}
+
+[data-route="/"] .navbar {
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-route="/"] .navbar__brand {
+  color: #ffffff !important;
+}
+
+[data-route="/"] .navbar__link {
+  color: #e0e0e0 !important;
+}
+
+[data-route="/"] .navbar__link:hover {
+  color: #ffffff !important;
+}
+
+/* Ensure path content maintains good contrast */
+.path-content {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Remove any remaining path description styling that might interfere */
+.path-description {
+  display: none;
+}
+
+.path-benefits {
+  display: none;
+}
+
+/* Make sure the path cards focus on the essentials */
+.path-header {
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for path icon images */
+@media (max-width: 768px) {
+  .path-icon-image {
+    width: 60px;
+    height: 60px;
+    padding: 6px;
+  }
+}
+
+/* Page Header with Custom Icons */
+.page-header-with-custom-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.page-header-with-custom-icon h1 {
+  margin: 0;
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary-darker);
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+
+/* Page Header Icon Container */
+.page-header-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Page Header Icon Image Styling */
+.page-header-icon-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: transparent;
+  padding: 4px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  vertical-align: middle;
+}
+
+/* Hover effect for page header icons */
+.page-header-with-custom-icon:hover .page-header-icon-image {
+  background: rgba(71, 85, 105, 0.1);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+  transform: scale(1.05);
+}
+
+/* GitHub link styling within page header */
+.page-header-with-custom-icon .github-icon-link {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(71, 85, 105, 0.25);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.page-header-with-custom-icon .github-icon-link:hover {
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-darker));
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.35);
+}
+
+.page-header-with-custom-icon .github-icon-link svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+/* Capability List Styling */
+.capability-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem 0;
+  counter-reset: capability-counter;
+}
+
+.capability-list li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 2.5rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: all 0.2s ease;
+  counter-increment: capability-counter;
+}
+
+.capability-list li:hover {
+  border-left-color: var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  transform: translateX(4px);
+}
+
+.capability-list li::before {
+  content: counter(capability-counter);
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(71, 85, 105, 0.2);
+}
+
+.capability-list li strong {
+  color: var(--ifm-color-primary-darker);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.capability-list li p {
+  margin: 0;
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Alternative bullet-point style capability list */
+.capability-list.bullet-style {
+  counter-reset: none;
+}
+
+.capability-list.bullet-style li {
+  padding-left: 2rem;
+}
+
+.capability-list.bullet-style li::before {
+  content: '•';
+  position: absolute;
+  left: 0.75rem;
+  top: 0.85rem;
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--ifm-color-primary);
+  border-radius: 0;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 900;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive adjustments for page headers */
+@media (max-width: 768px) {
+  .page-header-with-custom-icon {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .page-header-with-custom-icon h1 {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .page-header-icon-image {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+  }
+  
+  .page-header-with-custom-icon .github-icon-link {
+    align-self: center;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .capability-list li {
+    padding-left: 2rem;
+  }
+  
+  .capability-list li::before {
+    left: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Hide Overview links in sidebar while keeping sidebar visible */
+.menu__link[href*="overview"],
+.menu__link[href*="Overview"],
+.menu__link:is([href$="/overview"], [href$="/overview/"]),
+.menu__link:is([href*="/overview."], [href*="/Overview."]),
+.menu__list-item:has(.menu__link[href*="overview"]),
+.menu__list-item:has(.menu__link[href*="Overview"]),
+.menu__list-item:has(.menu__link:is([href$="/overview"], [href$="/overview/"])),
+.menu__list-item:has(.menu__link:is([href*="/overview."], [href*="/Overview."]))
+{
+  display: none !important;
+}
+
+/* Alternative approach: Hide by text content containing "Overview" */
+.menu__link:has-text("Overview"),
+.menu__list-item:has(.menu__link:has-text("Overview")) {
+  display: none !important;
+}
+
+/* Specific selector for sidebar overview sections */
+.sidebar-overview-section,
+.sidebar-overview-with-icon {
+  display: none !important;
 }
