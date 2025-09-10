@@ -26,9 +26,6 @@ import inferenceStackIcon from './assets/inference-stack.webp';
     </div>
   </a>
 
-  <div className="path-divider path-divider-vertical">
-    <span>OR</span>
-  </div>
 
   <a href="./inference-stack/" className="path-card-link path-card-link-flex">
     <div className="path-card inference-path path-card-flex">
