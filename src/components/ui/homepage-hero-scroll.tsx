@@ -56,7 +56,7 @@ const Section2: React.FC<SectionProps> = ({ scrollYProgress }) => {
           <a href="./control-layer/" className="path-card-link path-card-link-flex">
             <div className="path-card control-path path-card-flex">
               <div className="path-icon">
-                <img src="/img/control-layer.webp" alt="Control Layer" className="path-icon-image" />
+                <img src="/docs/img/control-layer.webp" alt="Control Layer" className="path-icon-image" />
               </div>
               <div className="path-header">
                 <h2>Already Using AI APIs?</h2>
@@ -71,7 +71,7 @@ const Section2: React.FC<SectionProps> = ({ scrollYProgress }) => {
           <a href="./inference-stack/" className="path-card-link path-card-link-flex">
             <div className="path-card inference-path path-card-flex">
               <div className="path-icon">
-                <img src="/img/inference-stack.webp" alt="Inference Stack" className="path-icon-image" />
+                <img src="/docs/img/inference-stack.webp" alt="Inference Stack" className="path-icon-image" />
               </div>
               <div className="path-header">
                 <h2>Want to Self-Host AI Models?</h2>

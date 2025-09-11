@@ -20,6 +20,11 @@ const sidebars: SidebarsConfig = {
       id: 'home/index',
       label: 'Home',
     },
+    {
+      type: 'doc',
+      id: 'home/home-static',
+      label: 'Home (Static)',
+    },
     
     // Control Layer Section
     {
