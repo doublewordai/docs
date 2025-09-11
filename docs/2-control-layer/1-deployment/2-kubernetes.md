@@ -18,7 +18,7 @@ SSO authentication.
 Kubernetes deployment is ideal for organizations requiring high availability,
 automatic scaling, and integration with existing Kubernetes infrastructure. For
 simpler single-server deployments, see our [Docker Compose deployment
-guide](/deployment/docker-compose).
+guide](./1-docker-compose.md).
 
 ## Prerequisites
 

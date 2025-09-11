@@ -17,7 +17,7 @@ encryption and OAuth authentication.
 
 Docker compose works great when deploying the control layer on a single server.
 If you would like to go beyond, check out our [kubernetes deployment
-guide](/deployment/kubernetes).
+guide](./2-kubernetes.md).
 
 ## Prerequisites
 
