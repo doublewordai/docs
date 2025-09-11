@@ -6,8 +6,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 const url = process.env.BASE_URL || 'https://docs.doubleword.ai/';
 
 const config: Config = {
-  title: 'Control Layer Documentation',
-  tagline: 'AI model management system',
+  title: 'Documentation',
+  tagline: 'Doubleword Technical Documentation',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -40,7 +40,7 @@ const config: Config = {
           sidebarCollapsed: false,
           sidebarPath: './sidebars.ts',
           routeBasePath: '/', // Serve the docs at the site's root
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
           includeCurrentVersion: true,
         },
         blog: {
