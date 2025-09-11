@@ -1,6 +1,15 @@
-# Website
+# Doubleword Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+📚 **[View Live Documentation →](https://doublewordai.github.io/docs/)**
+
+This documentation site is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+## About
+
+This repository contains the technical documentation for Doubleword's AI platform, including:
+
+- **Control Layer**: Enterprise control over AI access
+- **Inference Stack**: Self-hosted AI model stack
 
 ## Installation
 
