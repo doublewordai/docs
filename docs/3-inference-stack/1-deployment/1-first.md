@@ -6,25 +6,9 @@ tags:
 - helm
 ---
 
-# Kubernetes Deployment Guide
+# Your First Deployment
 
-This guide provides instructions for deploying the Doubleword Inference Stack to Kubernetes using Helm.
-
-Kubernetes deployment is ideal for organizations requiring high availability, automatic scaling, and integration with existing Kubernetes infrastructure. For simpler single-server deployments, we recommend running containers directly.
-
-## Prerequisites
-
-Before beginning your deployment, ensure you have the necessary infrastructure and credentials prepared.
-
-### System Requirements
-
-Your Kubernetes cluster must be running version 1.24 or later with kubectl
-configured to access your target cluster. You'll also need Helm 3.8 or later
-installed for managing the deployment.
-
-### Node Availability
-
-Ensure that your Kubernetes nodes have sufficient resources (CPU, memory, and disk space) to run the Inference Stack components. It's recommended to use dedicated nodes for production deployments.
+In this guide, we'll walk you through the steps to deploy the Doubleword Inference Stack using Helm on a Kubernetes cluster. Customization and advanced configurations will not be covered in this introductory guide.
 
 ## Installing the Helm Chart
 
@@ -61,7 +45,7 @@ Models are added under the `modelGroups` key in the `values.yaml` file. You can 
 ```yaml
 modelGroups:
   # vLLM deployment serving Llama models
-  vllm-llama:
+  vllm-example:
     enabled: true
 
     image:
@@ -107,7 +91,7 @@ For GPU-enabled inference you can assign these resources to your models:
 
 ```yaml
 modelGroups:
-  vllm-llama:
+  vllm-example:
     resources:
       limits:
         nvidia.com/gpu: 2
@@ -125,18 +109,20 @@ modelGroups:
         effect: NoSchedule
 ```
 
-### Deployment Strategy Configuration
+### Shared Memory
+
+If you are running models in tensor parallel you will need to increase the default shared memory size. You can do this by adding an `emptyDir` volume for shared memory:
 
 ```yaml
 modelGroups:
-  vllm-llama:
-    # Rolling update strategy for zero-downtime deployments
-    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        maxSurge: 1          # Allow 1 extra pod during updates
-        maxUnavailable: 0    # Never take pods down (blue-green)
-    
-    # Scale replicas for high availability
-    replicaCount: 3
+  vllm-example:
+    volumeMounts:
+      - name: shm
+        mountPath: /dev/shm
+
+    volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 20Gi
 ```
