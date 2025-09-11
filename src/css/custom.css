@@ -1373,43 +1373,6 @@ h1 {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Override sidebar icons to use webp images */
-/* Control Layer sidebar icon with webp */
-.control-layer-with-icon > .menu__list-item-collapsible > .menu__link:before {
-  content: '';
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 0.5rem;
-  background-image: url('/img/control-layer-icon.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  flex-shrink: 0;
-  vertical-align: middle;
-  /* Remove mask properties since we're using a direct image */
-  mask-image: none;
-  background-color: transparent;
-}
-
-/* Inference Stack sidebar icon with webp */
-.inference-stack-with-icon > .menu__list-item-collapsible > .menu__link:before {
-  content: '';
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 0.5rem;
-  background-image: url('/img/inference-stack-icon.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  flex-shrink: 0;
-  vertical-align: middle;
-  /* Remove mask properties since we're using a direct image */
-  mask-image: none;
-  background-color: transparent;
-}
-
 /* Ensure sidebar icons maintain proper styling on hover and active states */
 .control-layer-with-icon > .menu__list-item-collapsible > .menu__link:hover:before,
 .control-layer-with-icon > .menu__list-item-collapsible > .menu__link--active:before,
