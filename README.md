@@ -1,6 +1,6 @@
 # Doubleword Documentation
 
-📚 **[View Live Documentation →](https://doublewordai.github.io/docs/)**
+📚 **[View Live Documentation →](https://docs.doubleword.ai)**
 
 This documentation site is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
