@@ -1455,9 +1455,9 @@ h1 {
   vertical-align: middle;
 }
 
-/* Hover effect for page header icons */
+/* Hover effect for page header icons - removed grey background */
 .page-header-with-custom-icon:hover .page-header-icon-image {
-  background: rgba(93, 108, 123, 0.1);
+  /* background: rgba(93, 108, 123, 0.1); - removed grey background */
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
   transform: scale(1.05);
 }
