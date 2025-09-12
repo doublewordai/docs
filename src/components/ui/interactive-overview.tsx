@@ -13,7 +13,7 @@ const InteractiveOverview: React.FC = () => {
     <div style={{ position: 'relative', display: 'inline-block', maxWidth: '100%' }}>
       {/* SVG Background */}
       <img
-        src="/docs/img/overview.svg"
+        src="/img/overview.svg"
         alt="Titan AI Platform Overview"
         style={{
           width: '100%',
