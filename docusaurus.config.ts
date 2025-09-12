@@ -13,10 +13,9 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: process.env.DOCUSAURUS_URL || 'https://doublewordai.github.io/',
+  url: process.env.DOCUSAURUS_URL || 'https://doubleword-docs.pages.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.DOCUSAURUS_BASE_URL || '/docs/',
+  baseUrl: process.env.DOCUSAURUS_BASE_URL || '/',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
