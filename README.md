@@ -11,6 +11,11 @@ This repository contains the technical documentation for Doubleword's AI platfor
 - **Control Layer**: Enterprise control over AI access
 - **Inference Stack**: Self-hosted AI model stack
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (>= 14.x)
+- [yarn](https://yarnpkg.com/) (>= 4)
+
 ## Installation
 
 ```bash
