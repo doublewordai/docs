@@ -175,6 +175,10 @@
 /* Sidebar styling */
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-color-emphasis-300);
+  position: sticky !important;
+  top: var(--ifm-navbar-height) !important;
+  height: calc(100vh - var(--ifm-navbar-height)) !important;
+  overflow-y: auto !important;
 }
 
 .menu__link {
