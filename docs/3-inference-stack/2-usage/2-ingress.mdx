@@ -1,0 +1,153 @@
+---
+sidebar_label: Ingress
+tags: 
+- ingress
+- routing
+- kubernetes
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Ingress
+
+This guide details how to create network access to your models deployed in a Kubernetes cluster.
+
+<Tabs groupId="operating-systems">
+  <TabItem value="aws" label="AWS">
+    ## Prerequisites
+
+    Make sure you have the [<ins>AWS Load Balancer Controller</ins>](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) installed in your cluster. Amazon Elastic Kubernetes Service (EKS) provides two options for exposing applications which can be configured with the Inference Stack.
+
+    ## [<ins>Application Load Balancer</ins>](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html)
+
+    To provision an Application Load Balancer add the following values to the Inference Stack helm chart:
+
+    ```yaml
+    ingress:
+      className: alb
+      annotations:
+        helm.sh/resource-policy: keep
+        alb.ingress.kubernetes.io/load-balancer-name: onwards-ingress
+        alb.ingress.kubernetes.io/target-type: ip
+        # alb.ingress.kubernetes.io/scheme: internet-facing
+        # alb.ingress.kubernetes.io/healthcheck-path: /healthz
+      hosts:
+        - host: example.com
+          paths:
+            - path: /
+              pathType: Prefix
+    ```
+
+    :::note
+    Add `alb.ingress.kubernetes.io/scheme: internet-facing` to the annotations section for public access, it will default to being internal otherwise.
+    :::
+
+    ## [<ins>AWS Network Load Balancer</ins>](https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html)
+
+    To provision a Network Load Balancer add the following values to the Inference Stack helm chart:
+
+    ```yaml
+    onwards:
+      loadBalancer:
+        enabled: true
+        nameOverwrite: onwards-service-loadbalancer
+        port: 80
+        annotations:
+          helm.sh/resource-policy: keep
+          service.beta.kubernetes.io/aws-load-balancer-type: "external"
+          service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "ip"
+          # service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+          # alb.ingress.kubernetes.io/healthcheck-path: /healthz
+    ```
+
+    :::note
+    Add `alb.ingress.kubernetes.io/scheme: internet-facing` to the annotations section for public access, it will default to being internal otherwise.
+    :::
+
+  </TabItem>
+  <TabItem value="gcp" label="GCP">
+    :::warning
+    Any Ingress resource deployed on GKE without the `kubernetes.io/ingress.class` annotation is interpreted as an external Ingress resource which deploys an external load balancer for the Service
+    :::
+
+    ## External Application Load Balancer
+
+    To provision an External Load Balancer add the following values to the Inference Stack helm chart:
+
+    ```yaml
+    ingress:
+      annotations:
+        helm.sh/resource-policy: keep
+        # kubernetes.io/ingress.class: "gce"
+        # kubernetes.io/ingress.regional-static-ip-name: 10.240.0.25
+      hosts:
+        - host: example.com
+          paths:
+            - path: /
+              pathType: Prefix
+    ```
+
+    :::info
+    `ingressClassName` are not supported by Google Load Balancers, so no need to provide `className`.
+    :::
+
+    ## Internal Application Load Balancer
+
+    To provision an Internal Load Balancer add the following values to the Inference Stack helm chart:
+
+    ```yaml
+    ingress:
+      annotations:
+        helm.sh/resource-policy: keep
+        kubernetes.io/ingress.class: "gce-internal"
+        # kubernetes.io/ingress.regional-static-ip-name: 10.240.0.25
+      hosts:
+        - host: example.com
+          paths:
+            - path: /
+              pathType: Prefix
+    ```
+
+  </TabItem>
+  <TabItem value="azure" label="Azure">
+
+    :::warning
+    If annotation `service.beta.kubernetes.io/azure-load-balancer-internal` is not present, the load balancer will be created as external by default.
+    :::
+
+    ## [External Access](https://learn.microsoft.com/en-us/azure/aks/load-balancer-standard)
+
+    To provision an External Load Balancer add the following values to the Inference Stack helm chart:
+
+    ```yaml
+    onwards:
+      loadBalancer:
+        enabled: true
+        nameOverwrite: onwards-service-loadbalancer
+        port: 80
+        annotations:
+          helm.sh/resource-policy: keep
+          # service.beta.kubernetes.io/azure-load-balancer-ipv4: 10.240.0.25
+          # service.beta.kubernetes.io/azure-load-balancer-ipv6: 10.240.0.26
+    ```
+
+    ## [Internal Access](https://learn.microsoft.com/en-us/azure/aks/internal-lb)
+
+    To provision an Internal Load Balancer add the following values to the Inference Stack helm chart:
+
+    ```yaml
+    onwards:
+      loadBalancer:
+        enabled: true
+        nameOverwrite: onwards-service-loadbalancer
+        port: 80
+        annotations:
+          helm.sh/resource-policy: keep
+          service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+          # service.beta.kubernetes.io/azure-load-balancer-ipv4: 10.240.0.25
+          # service.beta.kubernetes.io/azure-load-balancer-ipv6: 10.240.0.26
+    ```
+
+  </TabItem>
+</Tabs>

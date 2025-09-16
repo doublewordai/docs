@@ -1,5 +1,5 @@
 ---
-sidebar_label: First Deployment
+sidebar_label: Getting Started
 tags: 
 - deployment
 - kubernetes
