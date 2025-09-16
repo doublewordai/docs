@@ -1,0 +1,69 @@
+---
+sidebar_label: Active Monitoring
+tags: 
+- monitoring
+- cronitor
+- active
+---
+
+# Active Monitoring
+
+Once your inference stack is deployed you want to set up active monitoring to ensure you are alerted to any issues before they impact your users.
+
+## Model Monitoring
+
+The Model Monitor is a tool to ping OpenAI compatible endpoints and ensure they are responsive. It is configured to work with [Cronitor](https://cronitor.io) to provide real-time monitoring and alerting for your models.
+
+### Installation
+
+```yaml
+helm install model-monitor oci://ghcr.io/doublewordai/model-monitor --values values.yaml
+```
+
+#### Setting Endpoints
+
+You need to configure your endpoints that you would like actively monitored in the `values.yaml` file.
+
+```yaml
+endpoints:
+  - name: "my-service"
+    url: "http://my-service"
+    models: 
+      - name: "embed"
+        type: "embedding"
+        monitor: "my-embedding-model"  # Optional: cronitor monitor name
+      - name: "generate"
+        type: "chat"
+        monitor: "my-chat-model"  # Optional: cronitor monitor name
+```
+
+#### Authorising to Cronitor
+
+You can feed in your cronitor api key and url using a Kubernetes secret. You can set the name of the secret in the `values.yaml` file as follows:
+
+```yaml
+# Telemetry configuration
+telemetry:
+    secretName: "cronitor-secret"
+```
+
+:::warning
+
+The secret should be in the same namespace as the Model Monitor helm chart. Inside the secret should be the API key and the endpoint for URL:
+
+```bash
+kubectl create secret generic cronitor-secret \
+  --from-literal=cronitor-api-key=<your-api-key> \
+  --from-literal=cronitor-url="https://cronitor.link/p/your-key/your-group"
+```
+
+:::
+
+#### Configuring Jobs
+
+The Model Monitor runs as a [Kubernetes CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) to periodically check the health of your endpoints. You can configure the schedule in the `values.yaml` file:
+
+```yaml
+cronJob:
+  schedule: "*/5 * * * *"
+```

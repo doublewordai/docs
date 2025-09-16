@@ -1,0 +1,40 @@
+---
+sidebar_label: Metrics
+tags: 
+- monitoring
+- metrics
+- prometheus
+---
+
+# Metrics
+
+We use [Prometheus](https://prometheus.io/) as our chosen integration for aggregation of metrics from your LLM applications. This is an open source time series database and monitoring solution.
+
+## Installing
+
+### Prerequisites
+
+* [Kube Prometheus Stack](https://github.com/prometheus-operator/kube-prometheus) - we have our own opinionated configuration: [Doubleword Observability Chart](https://github.com/doublewordai/helm-charts/tree/main/charts/observability). Which can be installed with:
+
+```yaml
+helm repo add doublewordai https://doublewordai.github.io/helm-charts
+helm install observability doublewordai/observability
+```
+
+#### Alert Integrations
+
+We currently support Slack and Incident.io for alerting, you can add your webhooks via Kubernetes secrets using the following commands:
+
+```bash
+kubectl create secret generic slack-webhook --from-literal=url=<your-slack-webhook-url> --namespace monitoring
+kubectl create secret generic incident-io-webhook --from-literal=url=<your-incident-io-webhook-url> --from-literal=token=<your-incident-io-token> --namespace monitoring
+```
+
+### Configuration
+
+To setup Prometheus to scrape metrics from your LLM applications add these values to your Inference Stack:
+
+```yaml
+serviceMonitor:
+  enabled: true
+```

@@ -1,0 +1,70 @@
+---
+sidebar_label: Probes
+tags: 
+- monitoring
+- cronitor
+- active
+---
+
+# Health Probes
+
+Kubernetes offers [Liveness, Readiness and Startup probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) to monitor the health of your applications. These can be configured in the Inference Stack to ensure your models are running correctly.
+
+## Startup Probe
+
+The startup probe gives explicit instruction for when a container is considered started. This is useful for applications that may take a long time to initialize like inference containers. For vLLM, the inference server is spun up after the model loading so a sensible startup probe can poll the inference port. To add a startup probe to the Inference Stack add the following values to your `modelGroup`:
+
+```yaml
+modelGroups:
+  vllm-example:
+    startupProbe:
+      enabled: true
+      type: http
+      path: /health
+      initialDelaySeconds: 120
+      periodSeconds: 30
+      timeoutSeconds: 10
+      failureThreshold: 50  # 2min + (50 × 30s) = 17 min max startup time
+```
+
+## Readiness Probe
+
+The readiness probe checks if your application is ready to handle requests. This is useful for applications that may not be ready immediately after startup. To add a readiness probe to the Inference Stack add the following values to your `modelGroup`:
+
+```yaml
+modelGroups:
+  vllm-example:
+    readinessProbe:
+      enabled: true
+      type: http
+      path: /health
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      timeoutSeconds: 5
+      failureThreshold: 3  # Fast readiness once startup is complete
+```
+
+:::info
+For vLLM the server is only loaded after the model is ready and fully served so the readiness probe has less use. For other inference engines it is different and the readiness probe is more useful in quantifying when the model is ready to serve requests.
+:::
+
+## Liveness Probe
+
+The Liveness Probe checks if your application is alive and should be restarted if it is not. You can configure it in your Inference Stack like this:
+
+```yaml
+modelGroups:
+  vllm-example:
+    livenessProbe:
+      enabled: true
+      type: http
+      path: /health
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      timeoutSeconds: 5
+      failureThreshold: 3
+```
+
+:::warning
+Liveness probes are crucial for ensuring that your application is running smoothly. If a liveness probe fails, Kubernetes will automatically restart the container, helping to maintain the overall health of your application. Liveness probes must be configured carefully to ensure that they truly indicate unrecoverable application failure, for example a deadlock. Incorrect implementation of liveness probes can lead to cascading failures
+:::

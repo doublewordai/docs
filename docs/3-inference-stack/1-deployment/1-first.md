@@ -1,5 +1,5 @@
 ---
-sidebar_label: First Deployment
+sidebar_label: Getting Started
 tags: 
 - deployment
 - kubernetes
@@ -125,4 +125,29 @@ modelGroups:
         emptyDir:
           medium: Memory
           sizeLimit: 20Gi
+```
+
+### Gated Model Weights
+
+:::note
+If you are using [bit harbor](./2-loading.md#bit-harbor) initContainers to speed up model downloads this is not necessary.
+:::
+
+Some model providers gate access to their models using API keys and you need to supply these to your inference container so they can download the weights. You can do this by creating a Kubernetes secret and referencing it in your `values.yaml` file.
+
+```yaml
+modelGroups:
+  vllm-example:
+    env:
+      - name: HF_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: hf-secret
+            key: HUGGING_FACE_HUB_TOKEN
+```
+
+Which pulls your Hugging Face access token from a kubernetes secret which can be created using:
+
+```bash
+kubectl create secret generic hf-secret --from-literal=HUGGING_FACE_HUB_TOKEN=<your_token>
 ```
