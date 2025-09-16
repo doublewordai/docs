@@ -62,7 +62,7 @@ This guide details how to create network access to your models deployed in a Kub
     ```
 
     :::note
-    Add `alb.ingress.kubernetes.io/scheme: internet-facing` to the annotations section for public access, it will default to being internal otherwise.
+    Add `service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"` to the annotations section for public access; it will default to being internal otherwise.
     :::
 
   </TabItem>
