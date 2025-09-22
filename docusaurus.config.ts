@@ -43,10 +43,10 @@ const config: Config = {
           showReadingTime: true,
           routeBasePath: 'conceptual',
           path: 'conceptual',
-          blogTitle: 'Conceptual',
+          blogTitle: 'Conceptual Guides',
           blogDescription: 'Conceptual guides and deep dives into AI infrastructure',
           blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'All posts',
+          blogSidebarTitle: 'All Guides',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -86,7 +86,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
-        { to: "/conceptual", label: "Conceptual", position: "left" },
+        { to: "/conceptual", label: "Conceptual Guides", position: "left" },
         { to: "/support", label: "Support", position: "left" },
         {
           href: 'https://github.com/doublewordai/control-layer',
