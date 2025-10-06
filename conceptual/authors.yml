@@ -20,7 +20,7 @@ amanda:
   name: Amanda Milberg
   title: Principal Solutions Engineer, Doubleword
   url: https://www.linkedin.com/in/amanda-milberg/
-  image_url: http://api.linkedin.com/v1/people/amanda-milberg/picture-url
+  image_url: https://github.com/amandamilberg.png
 
 peter:
   name: Peter Bhabra
