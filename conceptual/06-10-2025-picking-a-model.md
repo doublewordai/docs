@@ -1,7 +1,7 @@
 ---
 title: "Choosing the Right Model for the Use Case"
 authors: [amanda]
-tags: [ai-infrastructure, concepts]
+tags: [model, eval, benchmark, cost]
 date: 2025-10-06
 ---
 
