@@ -1,7 +1,7 @@
 ---
 title: "Understanding Chargeback in the Context of Self-Hosted Systems"
 authors: [amanda]
-tags: [ai-infrastructure, concepts]
+tags: [chargeback, self-host, gateway, observability]
 date: 2025-10-06
 ---
 
