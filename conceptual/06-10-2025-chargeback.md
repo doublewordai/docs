@@ -26,7 +26,7 @@ To accurately measure how much each user consumes, the Doubleword Control Layer 
 
 All user requests and responses that pass through the Doubleword Control layer are logged in an internal, queryable database. This database provides detailed insights, such as the number of requests a user has sent, the specific models they interacted with, and the input and output token counts for each request. By querying this data, we can generate summary tables, like the one shown in the image below, to provide a clear breakdown of resource consumption by user. This level of granularity ensures transparency and accountability, making it easy to allocate costs fairly and optimize resource usage.
 
-![image](../static/img/summary_table_chargeback.png)
+![image](./assets/summary_table_chargeback.png)
 
 For example we can run the following query to get the summary table: 
 
