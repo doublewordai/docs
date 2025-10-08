@@ -1,7 +1,7 @@
 ---
 title: "Understanding Chargeback in the Context of Self-Hosted Systems"
 authors: [amanda]
-tags: [chargeback, self-host, gateway, observability]
+tags: [ai-infrastructure, concepts]
 date: 2025-10-06
 ---
 
@@ -10,6 +10,7 @@ When technology infrastructure—such as GPUs and servers—is owned and managed
 
 So, how do you design a chargeback system that is scalable, transparent, and easy to manage as your organization grows from supporting a handful of users to thousands of downstream business units? In this guide, we’ll explore how to architect and implement a chargeback system that not only integrates seamlessly with your existing AI infrastructure but also provides clear visibility into costs and benefits. By doing so, you can ensure that the value of your AI investments is both measurable and aligned with business goals.
 
+<!-- truncate -->
 ## Why Chargeback Systems Matter? 
 
 We believe that to run AI inference at scale, it is essential to centralize your inference operations as part of building out your InferenceOps function (you can read more about InferenceOps in our blog series [here](https://www.doubleword.ai/resources/scaling-ai-requires-inferenceops-not-mlops)). Centralizing inference ensures that GPU resources are shared efficiently across multiple departments in your organization. However, with shared resources comes the challenge of cost allocation—how do you ensure that each department pays for the portion of resources they consume? This is where a robust chargeback system becomes critical.
