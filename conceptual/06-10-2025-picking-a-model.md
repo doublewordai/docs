@@ -1,7 +1,7 @@
 ---
 title: "Choosing the Right Model for the Use Case"
 authors: [amanda]
-tags: [model, eval, benchmark, cost]
+tags: [ai-infrastructure, concepts]
 date: 2025-10-06
 ---
 
@@ -9,6 +9,7 @@ date: 2025-10-06
 
 Selecting the right AI model for deployment is a critical decision that can significantly impact the performance, cost, and user experience of your application. With a wide variety of models available—each with unique strengths and trade-offs—it’s essential to evaluate them carefully based on relevant criteria. In this post, we’ll explore the three key factors to consider when comparing models for deployment: quality, cost, and speed. Understanding how these factors interact and influence your application will help you make informed choices that align with your technical requirements and business goals
 
+<!-- truncate -->
 ## Comparing Models for Deployment 
 
 When comparing models or updating models for deployment there are three primary factors to consider: quality, cost and speed. 
