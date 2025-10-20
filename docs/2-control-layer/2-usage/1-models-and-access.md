@@ -5,7 +5,7 @@ the Doubleword Control Layer.
 
 ## Models Overview Page
 
-The <a href="/models" target="_top">Models page</a> displays all models you have access to through your
+The Models page displays all models you have access to through your
 group memberships. Each model card shows comprehensive information to help you
 choose the right model for your task.
 
