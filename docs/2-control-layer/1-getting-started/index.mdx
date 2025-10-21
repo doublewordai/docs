@@ -1,0 +1,72 @@
+---
+sidebar_label: Getting Started
+collapsible: true # make the category collapsible
+collapsed: false # keep the category open by default
+---
+# Getting Started
+
+The Doubleword Control Layer provides a single, high-performance interface for routing, managing,
+and securing inference across model providers, users and deployments - both
+open-source and proprietary.
+
+## Quick Start with Docker Compose
+
+With docker compose installed, these commands will start the Control Layer stack:
+
+```bash
+wget https://raw.githubusercontent.com/doublewordai/control-layer/refs/heads/main/docker-compose.yml
+docker compose up -d
+```
+
+Navigate to `http://localhost:3001` to access the Control Layer dashboard.
+
+## Docker Deployment
+
+The Control Layer requires a PostgreSQL database to run. If you have one setup
+already (for example, via a cloud provider), you can run:
+
+```bash
+docker run -p 3001:3001 \
+    -e DATABASE_URL=<your postgres connection string here> \
+    -e SECRET_KEY="mysupersecretkey" \
+    ghcr.io/doublewordai/control-layer:latest
+```
+
+:::warning
+Make sure to replace the secret key with a secure random value in production. You can generate one with:
+
+```bash
+openssl rand -base64 32
+```
+
+:::
+
+Navigate to `http://localhost:3001` to get started.
+
+## Configuration
+
+The Control Layer can be configured using a `config.yaml` file. To supply one, mount it into
+the container at `/app/config.yaml`:
+
+```bash
+docker run -p 3001:3001 \
+  -e DATABASE_URL=<your postgres connection string here> \
+  -e SECRET_KEY="mysupersecretkey"  \
+  -v ./config.yaml:/app/config.yaml \
+  ghcr.io/doublewordai/control-layer:latest
+```
+
+If using Docker Compose, the `config.yaml` file will be automatically mounted if you place it alongside `docker-compose.yml`.
+
+See the [Configuration Reference](/control-layer/reference/configuration) for detailed configuration options.
+
+## Production Checklist
+
+Before deploying to production, ensure you've completed these steps:
+
+1. **Database**: Set up a production-grade PostgreSQL database and configure the `DATABASE_URL` environment variable
+2. **Secret Key**: Generate and set a secure random secret key using `openssl rand -base64 32`
+3. **Authentication**: Configure authentication settings (native login, SSO, or proxy header auth) based on your requirements
+4. **CORS**: Update CORS settings to match your frontend URL
+5. **User Registration**: Decide whether to enable self-service user registration or require admin-created accounts
+6. **Admin Credentials**: Change the default admin password immediately after first login

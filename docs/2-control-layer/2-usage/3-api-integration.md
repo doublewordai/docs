@@ -4,6 +4,8 @@ The Control Layer provides an OpenAI-compatible API for programmatic access to A
 models. This allows you to integrate AI capabilities into your applications
 using familiar tools and libraries.
 
+Clicking on the API button for any model in the 'models' view will open a menu in which you can view interactive snippets for various programming languages, including Python and Node.js.
+
 ## API Keys
 
 Generate API keys through the API Keys page to authenticate your applications.
@@ -158,4 +160,3 @@ is straightforward:
 
 Your application code remains unchanged. The Control Layer handles
 provider-specific details transparently.
-
