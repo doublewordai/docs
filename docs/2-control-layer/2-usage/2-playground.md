@@ -1,4 +1,4 @@
-# Playground
+# Using the playground
 
 The Playground provides an interactive interface for testing and experimenting
 with AI models. Use it to explore model capabilities, test prompts, and compare
@@ -13,6 +13,9 @@ the overview page.
 This guide will discuss how to use the Playground effectively for generative
 models.
 
+![Control Layer Playground](/img/control-layer-playground.png)
+*The Chat Playground interface - test and compare AI models side-by-side*
+
 ## Getting Started
 
 Select any model from your available models to begin a conversation. The
@@ -20,8 +23,9 @@ Playground maintains conversation context, allowing natural back-and-forth
 interactions just like ChatGPT or Claude's web interface.
 
 Each conversation is independent. Start a new conversation to reset the context
-or to try a different approach. You can switch between models mid-conversation
-to see how different models respond to the same context.
+or to try a different approach. You can add a comparison model at any time, and copy the current context across, to see how a different model would respond to the same inputs. Buttons on the playground page let you decide whether you're sending different prompts to the each model, or the same prompt to both.
+
+Try configuring the system prompt in the dropdown to set global system behaviour.
 
 ## Use Cases
 
@@ -103,4 +107,3 @@ are exactly what you'll use in API calls.
 Remember that while the Playground is great for experimentation, production
 applications need proper error handling, retry logic, and potentially fallback
 models that the Playground doesn't provide.
-

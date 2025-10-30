@@ -31,6 +31,8 @@ performance is multifaceted and can't be captured by simple benchmarks. See
 [here](https://blog.tjll.net/reverse-proxy-hot-dog-eating-contest-caddy-vs-nginx/)
 for interesting content.
 
+<!-- truncate -->
+
 ![benchmarking](./assets/benchmarking.png)
 
 *Fig. 1: How these sorts of articles go. From [this](https://hannes.muehleisen.org/publications/DBTEST2018-performance-testing.pdf) article on benchmarking in DBMS.*

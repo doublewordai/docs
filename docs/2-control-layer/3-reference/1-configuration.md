@@ -1,5 +1,5 @@
 ---
-sidebar_label: Configuration
+sidebar_label: Initial Configuration
 ---
 # Configuration Reference
 
@@ -10,6 +10,7 @@ variable overrides for all settings.
 ## Configuration File Location
 
 The configuration file should be named `config.yaml` and can be:
+
 - Placed in the application root directory
 - Mounted into a Docker container at `/app/config.yaml`
 - Placed alongside `docker-compose.yml` (automatically mounted)
@@ -22,6 +23,7 @@ Any configuration setting can be overridden using environment variables prefixed
 `DWCTL_`. Your custom values will be merged with the default configuration.
 
 Nested sections can be specified by joining keys with a double underscore. For example:
+
 - To disable native authentication: `DWCTL_AUTH__NATIVE__ENABLED=false`
 - To change the port: `DWCTL_PORT=8080`
 - To set the database URL: `DATABASE_URL=postgres://...` (special case, no prefix)
@@ -63,6 +65,7 @@ includes the username, hostname, port, and database name. The system expects
 the database to exist and will run migrations automatically on startup.
 
 You can also set the database URL via the `DATABASE_URL` environment variable (recommended for production):
+
 ```bash
 DATABASE_URL=postgres://username@hostname:5432/database_name
 ```
@@ -107,6 +110,7 @@ secret_key: "your-secret-key-here"
 ```
 
 This can also be set via the `SECRET_KEY` environment variable. Generate a secure random key using:
+
 ```bash
 openssl rand -base64 32
 ```

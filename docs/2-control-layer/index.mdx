@@ -18,7 +18,10 @@ import DocCardList from '@theme/DocCardList';
   </a>
 </div>
 
-The **Doubleword Control Layer** is a distributed AI model management platform that provides secure, scalable access control between your users and AI model providers. It acts as an intelligent gateway that manages authentication, permissions, and API access while maintaining full compatibility with existing AI workflows.
+The Doubleword Control Layer is the world’s fastest AI model gateway (450x less
+overhead than LiteLLM). It provides a single, high-performance interface for
+routing, managing, and securing LLM inference across model providers, users and
+deployments - both open-source and proprietary.
 
 :::tip Why Use the Control Layer?
 Transform your AI infrastructure from scattered API calls to a centralized, secure, and manageable platform that scales with your organization.
@@ -36,27 +39,61 @@ Transform your AI infrastructure from scattered API calls to a centralized, secu
 
 <div className="capability-list">
 
-### **Unified Access Control**
-Role-based permissions system that works across all AI providers and models. Create users and groups with granular access controls that align with your organizational structure.
+### **OpenAI-Compatible API**
 
-### **OpenAI-Compatible API**  
-Your existing code works without modification. Simply point your applications to the Control Layer's `/ai/` endpoints and continue using familiar patterns like `/ai/chat/completions`.
+A single openAI-compatible gateway to all of your AI models across, all your
+providers. Your existing code works without modification - simply point your
+applications to the Control Layer's `/ai/` endpoints, and supply a control
+layer API key.
 
-### **Enterprise Security**
-Enterprise-grade SSO integration with automatic token management and secure API key generation for programmatic access.
+![OpenAI-compatible API example](/img/control-layer-api-example.png)
+*Using the Control Layer with the OpenAI Python SDK*
 
-### **Centralized Management**
-Web-based dashboard for managing users, groups, model permissions, and usage monitoring from a single interface.
+**[Learn more about API Integration →](/control-layer/usage/api-integration)**
 
-### **Multi-Provider Support**
-Abstract away the complexity of different AI providers while maintaining consistent access patterns and security policies.
+**[Learn more about adding endpoints to the Control Layer →](/control-layer/usage/admin/model-sources)**
+
+### **Centralized User Management & API Key Authentication**
+
+Manage all the users that can access all of your AI models from one simple
+interface. Map users to groups, let users create their own API keys, and
+monitor usage of AI APIs across your organization.
+
+The control layer lets you turn unauthenticated, self-hosted model deployments
+into production-ready services with user authentication and access control.
+
+![Control Layer Users & Groups Interface](/img/control-layer-users-groups.png)
+*The Control Layer's Users & Groups interface*
+
+**[Learn more about Users & Groups →](/control-layer/usage/admin/users-and-groups)**
+
+### **Real-Time Monitoring & Analytics**
+
+Track request volumes, token usage, response times, and model performance
+across your entire organization. Built-in analytics help you understand usage
+patterns, optimize costs, and identify bottlenecks with detailed insights into
+every API call. Store every request and response you send to LLM APIs for
+auditing, compliance, or later fine-tuning.
+
+![Control Layer Model Metrics](/img/control-layer-model-metrics.png)
+*At a glance model metrics showing request counts, token usage, and average response times*
+
+Drill down into user behaviour across providers - with opinionated analytics
+for understanding which models are being used, by whom, and for what purposes.
+![Control Layer Analytics Dashboard](/img/control-layer-analytics.png)
+*Traffic analytics showing gateway metrics, status codes, model breakdown, and usage over time*
+
+**[Learn more about Models & Access →](/control-layer/usage/models-and-access)**
+
+### **Interactive AI Playgrounds**
+
+Test and compare generative, embedding, and reranker models side-by-side with custom settings before integrating them into your applications. Experiment with different prompts, parameters, and models to find the best solution for your use case.
+
+![Control Layer Playground](/img/control-layer-playground.png)
+*Chat Playground enabling side-by-side model comparison and testing*
+
+**[Learn more about the Playground →](/control-layer/usage/playground)**
 
 </div>
 
----
-
-## Quick Start
-
-Ready to implement secure AI model management in your organization? Follow our step-by-step guides:
-
-<DocCardList />
+## [Get started with the Control Layer →](/control-layer/getting-started)

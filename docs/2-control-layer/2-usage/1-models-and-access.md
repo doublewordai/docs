@@ -1,9 +1,7 @@
-# Models Overview
+# Viewing available models
 
 The Models page provides an overview of all AI models available to you through
 the Doubleword Control Layer.
-
-## Models Overview Page
 
 The Models page displays all models you have access to through your
 group memberships. Each model card shows comprehensive information to help you
@@ -11,10 +9,21 @@ choose the right model for your task.
 
 The page organizes models by their source provider (OpenAI, Anthropic, or
 custom endpoints), making it easy to understand which service powers each
-model. This organization helps when you need specific provider features or want
+model. This organization helps when you need specific provider features, or want
 to compare models from the same family.
 
+Each model has an API examples tab, showing how to use the model API, and a
+Playground tab, providing an interactive interface to test the model directly
+in your browser.
+
 ![Models Page](/img/models.png)
+
+### For administrators
+
+Clicking through on a model card will give you additional information about that model. As an administrator, you can use these pages to configure the models behaviour - for example, setting the model type will change what playground will be displayed for the model.
+
+Clicking the 'Add groups' button lets you change which user groups have access
+to the model. Navigate to the Users & Groups tab to manage group memberships. User-group-model assignments are evaluated at request time, so changes take effect immediately.
 
 ## How to refer to a model
 
@@ -29,7 +38,7 @@ if the underlying model changes.
 
 ## Staying Informed
 
-The Models page updates automatically as:
+For users, the models page updates automatically as:
 
 - New models become available from providers
 - Model availability status changes
