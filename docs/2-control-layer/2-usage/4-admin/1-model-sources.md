@@ -1,6 +1,6 @@
 # Adding new endpoints
 
-Once we've got the Control Layer running (see [Getting Started](../../1-getting-started/) for how), we need to add models to interact with.
+Once we've got the Control Layer running (see [Getting Started](../../getting-started/) for how), we need to add models to interact with.
 
 Model sources in the Control Layer are referred to as "Endpoints". An endpoint
 is an accessible URL that exposes AI models via an OpenAI-compatible API.
