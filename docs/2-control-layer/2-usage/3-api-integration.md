@@ -6,6 +6,9 @@ using familiar tools and libraries.
 
 Clicking on the API button for any model in the 'models' view will open a menu in which you can view interactive snippets for various programming languages, including Python and Node.js.
 
+![OpenAI-compatible API example](/img/control-layer-api-example.png)
+*Using the Control Layer with the OpenAI Python SDK - simply change the base_url and api_key*
+
 ## API Keys
 
 Generate API keys through the API Keys page to authenticate your applications.
