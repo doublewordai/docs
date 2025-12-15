@@ -5,8 +5,6 @@ tags: [ai-infrastructure, concepts, batch-inference]
 date: 2025-12-15
 ---
 
-## $12 for a Year of Research Digests or a Chipotle Burrito. You Decide.
-
 Researchers face an impossible task in staying up to date within their field. In AI and Machine Learning alone, [arXiv](https://arxiv.org/) publishes 50-100 new papers daily. Multiply that across computer science, physics, biology, and other domains, and you're looking at hundreds of potentially relevant papers flooding in every single day.
 
 The result? Teams fall behind on breakthrough papers. Important work gets buried under noise. And the constant feeling of "I should be reading more papers" becomes just another source of stress.
