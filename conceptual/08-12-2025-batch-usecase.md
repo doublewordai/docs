@@ -184,6 +184,6 @@ The pattern extends far beyond academic research. Anywhere you have high-volume 
 
 **Try it yourself**: The complete arXiv digest code is available on Github [here](https://github.com/doublewordai/arxiv-daily-digest)!
 
-**Want to build your own digest?** The Doubleword Batch API makes it economically viable. Sign up for our private preview to get your first batch run for free [here](https://docs.google.com/forms/d/1U2rlKezXEbuAPPqRmdhk9VDHH-9lvCFEDw7h3vZfUvA/edit#responses).
+**Want to build your own digest?** The Doubleword Batch API makes it economically viable. Sign up for our private preview to get your first batch run for free [here](https://docs.google.com/forms/d/e/1FAIpQLScl5WPU4xlubaBkGRAFggJ5iuKBKVwkrhouXJIIul2BhIFHAg/viewform).
 
 **Questions or ideas?** We'd love to hear what digest use cases you're building. Share them in the comments or reach out to our team at hello@doubleword.ai.
