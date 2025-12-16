@@ -1,5 +1,5 @@
 ---
-title: "$12 for a Year of Research Digests or a Chipotle Burrito. You Decide."
+title: "$1 for a Year of Research Digests. That's Less Than a Coffee."
 authors: [amanda]
 tags: [ai-infrastructure, concepts, batch-inference]
 date: 2025-12-15
@@ -41,11 +41,11 @@ Let's look at real numbers from our production system evaluating ~70 papers dail
 
 | Provider | Model | Daily Cost | Annual Cost | vs Doubleword |
 |----------|-------|------------|-------------|---------------|
-| **Doubleword Batch** | **Qwen3-VL-30B** | **$0.0033** | **$12** | **Baseline** |
-| OpenAI | GPT-4o-mini | $0.01 | $36 | 3x more expensive |
-| Anthropic | Claude Sonnet 4.1 | $0.219 | $80 | 7x more expensive |
+| **Doubleword Batch** | **Qwen3-VL-30B** | **$0.0033** | **$1.20** | **Baseline** |
+| OpenAI | GPT-4o-mini (real-time) | $0.026 | $9.64 | 8x more expensive |
+| Anthropic | Claude Sonnet 4 (real-time) | $0.22 | $80 | 67x more expensive |
 
-At $12/year, this digest becomes a no-brainer to run in the background. Even if usage tripled, we'd still be under $40/year. That's the difference between "we should probably turn this off" and "why wouldn't we run this?"
+At $1/year, this digest becomes a no-brainer to run in the background. Even if usage quadruples, we'd still be under $5! That's the difference between "we should probably turn this off" and "why wouldn't we run this?". 
 
 ### Perfect for Parallel Evaluation
 
@@ -176,7 +176,7 @@ The common thread: large volumes of unstructured data that need intelligent filt
 
 Information overload is a real problem. As the volume of content explodes—research papers, news articles, product reviews, social media—the challenge isn't access to data. It's filtering for what matters.
 
-Batch APIs make intelligent, at-scale curation economically viable. For **$1/month** ($12/year), we turned an impossible task into a solved problem. 
+Batch APIs make intelligent, at-scale curation economically viable. For **$1/year**, we turned an impossible task into a solved problem. 
 
 The pattern extends far beyond academic research. Anywhere you have high-volume data that needs evaluation but not immediate results, batch processing is the answer.
 
