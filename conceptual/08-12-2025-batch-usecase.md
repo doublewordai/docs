@@ -42,7 +42,7 @@ Let's look at real numbers from our production system evaluating ~70 papers dail
 | Provider | Model | Daily Cost | Annual Cost | vs Doubleword |
 |----------|-------|------------|-------------|---------------|
 | **Doubleword Batch** | **Qwen3-VL-30B** | **$0.0033** | **$1.20** | **Baseline** |
-| OpenAI | GPT-4o-mini (real-time) | $0.026 | $9.64 | 8x more expensive |
+| OpenAI | gpt-4.1-mini (real-time) | $0.026 | $9.64 | 8x more expensive |
 | Anthropic | Claude Sonnet 4 (real-time) | $0.22 | $80 | 67x more expensive |
 
 At $1/year, this digest becomes a no-brainer to run in the background. Even if usage quadruples, we'd still be under $5! That's the difference between "we should probably turn this off" and "why wouldn't we run this?". 
