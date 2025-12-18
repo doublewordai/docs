@@ -1,26 +1,587 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Configure Tailwind dark mode to use .dark class */
+@theme {
+  --color-scheme: light dark;
+  --breakpoint-3xl: 2048px;
+}
+
+@variant dark (.dark &);
+
+/* ============================================
+   CSS Custom Properties
+   ============================================ */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e5e5e5;
+  --text-muted: #666666;
+  --link-color: #0070f3;
+  --link-hover: #0051cc;
+  --active-bg: #0070f3;
+  --active-text: #ffffff;
+  --hover-bg: #fafafa;
+  --code-bg: #f5f5f5;
+  --code-text: #000000;
+  --pre-bg: #fafafa;
+  --pre-border: #e5e5e5;
+
+  /* Typography */
+  --font-family: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --line-height: 1.5;
+}
+
+html[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #ededed;
+  --sidebar-bg: #0a0a0a;
+  --sidebar-border: #1a1a1a;
+  --text-muted: #888888;
+  --link-color: #3291ff;
+  --link-hover: #66aaff;
+  --active-bg: #0070f3;
+  --active-text: #ffffff;
+  --hover-bg: #111111;
+  --code-bg: #111111;
+  --code-text: #ffffff;
+  --pre-bg: #0a0a0a;
+  --pre-border: #1a1a1a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-ibm-plex-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ============================================
+   Base Styles
+   ============================================ */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  letter-spacing: -0.011em;
+  font-size: 16px;
+}
+
+@media (min-width: 1536px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+/* ============================================
+   Prose Typography Styles
+   ============================================ */
+
+.prose {
+  color: var(--foreground);
+  font-size: inherit;
+}
+
+.prose p,
+.prose li {
+  color: var(--foreground);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--foreground);
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1 {
+  margin-top: 0;
+}
+
+.prose p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.prose a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--link-hover);
+}
+
+.prose strong {
+  color: var(--foreground);
+}
+
+.prose blockquote {
+  color: var(--text-muted);
+  border-left-color: var(--sidebar-border);
+}
+
+.prose hr {
+  border-color: var(--sidebar-border);
+}
+
+.prose table {
+  color: var(--foreground);
+}
+
+.prose thead {
+  color: var(--foreground);
+  border-bottom-color: var(--sidebar-border);
+}
+
+.prose tbody tr {
+  border-bottom-color: var(--sidebar-border);
+}
+
+/* ============================================
+   Code Blocks
+   ============================================ */
+
+.prose :not(pre) > code {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none;
+}
+
+.prose pre {
+  background: var(--pre-bg);
+  border: 1px solid var(--pre-border);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow-x: auto;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: var(--line-height);
+}
+
+/* ============================================
+   Heading Anchors
+   ============================================ */
+
+.prose h2[id],
+.prose h3[id],
+.prose h4[id] {
+  scroll-margin-top: 2rem;
+  position: relative;
+}
+
+.prose h2[id] a.anchor,
+.prose h3[id] a.anchor,
+.prose h4[id] a.anchor {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.prose h2[id] a.anchor::before,
+.prose h3[id] a.anchor::before,
+.prose h4[id] a.anchor::before {
+  content: "#";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--text-muted);
+  font-weight: normal;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.prose h2[id]:hover a.anchor::before,
+.prose h3[id]:hover a.anchor::before,
+.prose h4[id]:hover a.anchor::before {
+  opacity: 1;
+}
+
+/* ============================================
+   Admonitions
+   ============================================ */
+
+.admonition {
+  margin: 1.5rem 0;
+  padding: 1rem 1rem 1rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.admonition-title {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.admonition-title::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.admonition > *:last-child {
+  margin-bottom: 0;
+}
+
+.admonition p {
+  margin: 0.5rem 0;
+  font-size: 0.9375rem;
+  line-height: var(--line-height);
+}
+
+/* Light mode admonitions */
+.admonition-note {
+  background: #f0f7ff;
+}
+
+.admonition-note .admonition-title {
+  color: #0070f3;
+}
+
+.admonition-note .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230070f3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
+}
+
+.admonition-tip {
+  background: #f0fdf4;
+}
+
+.admonition-tip .admonition-title {
+  color: #16a34a;
+}
+
+.admonition-tip .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3C/svg%3E");
+}
+
+.admonition-warning,
+.admonition-caution {
+  background: #fffbeb;
+}
+
+.admonition-warning .admonition-title,
+.admonition-caution .admonition-title {
+  color: #f59e0b;
+}
+
+.admonition-warning .admonition-title::before,
+.admonition-caution .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E");
+}
+
+.admonition-danger {
+  background: #fef2f2;
+}
+
+.admonition-danger .admonition-title {
+  color: #dc2626;
+}
+
+.admonition-danger .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23dc2626' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E");
+}
+
+.admonition-info {
+  background: #faf5ff;
+}
+
+.admonition-info .admonition-title {
+  color: #8b5cf6;
+}
+
+.admonition-info .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
+}
+
+/* Dark mode admonitions */
+html[data-theme="dark"] .admonition-note {
+  background: rgba(0, 112, 243, 0.1);
+}
+
+html[data-theme="dark"] .admonition-note .admonition-title {
+  color: #3291ff;
+}
+
+html[data-theme="dark"] .admonition-note .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233291ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] .admonition-tip {
+  background: rgba(22, 163, 74, 0.1);
+}
+
+html[data-theme="dark"] .admonition-tip .admonition-title {
+  color: #4ade80;
+}
+
+html[data-theme="dark"] .admonition-tip .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234ade80' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] .admonition-warning,
+html[data-theme="dark"] .admonition-caution {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+html[data-theme="dark"] .admonition-warning .admonition-title,
+html[data-theme="dark"] .admonition-caution .admonition-title {
+  color: #fbbf24;
+}
+
+html[data-theme="dark"] .admonition-warning .admonition-title::before,
+html[data-theme="dark"] .admonition-caution .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fbbf24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] .admonition-danger {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+html[data-theme="dark"] .admonition-danger .admonition-title {
+  color: #f87171;
+}
+
+html[data-theme="dark"] .admonition-danger .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f87171' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m15 9-6 6'/%3E%3Cpath d='m9 9 6 6'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] .admonition-info {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+html[data-theme="dark"] .admonition-info .admonition-title {
+  color: #a78bfa;
+}
+
+html[data-theme="dark"] .admonition-info .admonition-title::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a78bfa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   Code Block Copy Button
+   ============================================ */
+
+.code-block-wrapper {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+}
+
+.copy-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--code-bg);
+  border: 1px solid var(--pre-border);
+  border-radius: 6px;
+  padding: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0;
+  color: var(--text-muted);
+}
+
+.code-block-wrapper:hover .copy-button,
+.code-tabs-container:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  color: var(--foreground);
+  border-color: var(--foreground);
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   Sidenotes (Popover style)
+   ============================================ */
+
+.footnote-wrapper {
+  position: relative;
+}
+
+.sidenote {
+  position: fixed;
+  max-width: 320px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 1rem;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--pre-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  color: var(--foreground);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.sidenote-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidenote p {
+  margin: 0.25rem 0;
+  font-size: inherit;
+}
+
+.sidenote p:first-child {
+  margin-top: 0;
+}
+
+.sidenote p:last-child {
+  margin-bottom: 0;
+}
+
+.sidenote a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.sidenote a:hover {
+  color: var(--link-hover);
+}
+
+/* Hide default footnotes section on large screens */
+@media (min-width: 768px) {
+  .footnotes-section {
+    display: none;
+  }
+}
+
+/* Hide sidenotes on smaller screens, show default footnotes */
+@media (max-width: 767px) {
+  .sidenote {
+    display: none;
+  }
+
+  .footnotes-section {
+    display: block;
+  }
+}
+
+/* ============================================
+   TOC Background Extension
+   ============================================ */
+
+.toc-aside::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  right: 0;
+  bottom: -2rem;
+  background: var(--background);
+  z-index: -1;
+}
+
+/* ============================================
+   Code Tabs
+   ============================================ */
+
+.code-tabs-container {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.code-tabs-select {
+  position: absolute;
+  top: 0.75rem;
+  right: 3.5rem;
+  z-index: 10;
+  padding: 0.375rem 1.5rem 0.375rem 0.75rem;
+  background: var(--code-bg);
+  border: 1px solid var(--pre-border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.code-tabs-container:hover .code-tabs-select {
+  opacity: 1;
+}
+
+.code-tabs-select:hover {
+  color: var(--foreground);
+  border-color: var(--foreground);
+}
+
+.code-tabs-select:focus {
+  outline: none;
+}
+
+.code-tab-panel {
+  display: none;
+}
+
+.code-tab-panel.active {
+  display: block;
+}
+
+.code-tabs-container .code-block-wrapper {
+  margin: 0;
 }

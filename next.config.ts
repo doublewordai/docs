@@ -1,8 +1,24 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
-};
 
-export default nextConfig;
+  // Enable detailed logging for cache debugging
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
+
+  // Allow images from Sanity CDN
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
+  },
+}
+
+export default nextConfig
