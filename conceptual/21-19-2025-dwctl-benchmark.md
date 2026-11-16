@@ -10,7 +10,7 @@ date: 2025-10-21
 Benchmarking is hard.
 
 We think our Control Layer
-([dwctl](https://github.com/doublewordai/control-layer)) is the fastest AI
+([dwctl](https://github.com/doublewordai/control-layer-public)) is the fastest AI
 gateway around. We believe this because it's written in Rust[^1], and because we thought about performance a
 lot while we were building it. We put it in production in our self-hosted
 inference stack, and we knew that it was fast because we didn't notice it.
@@ -301,7 +301,7 @@ served behind a reverse proxy, then the proxy is doing a bad job. Even small
 performance improvements can help us to disappear.
 
 If you'd like to get started with the Doubleword Control Layer, join us on the
-[github](https://github.com/doublewordai/control-layer). For issues, with our
+[github](https://github.com/doublewordai/control-layer-public). For issues, with our
 performance or my benchmarking methodology, raise them on the [issues
-page](https://github.com/doublewordai/control-layer/issues).
+page](https://github.com/doublewordai/control-layer-public/issues).
 

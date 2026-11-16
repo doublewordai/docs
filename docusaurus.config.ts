@@ -89,7 +89,7 @@ const config: Config = {
         { to: "/conceptual", label: "Conceptual Guides", position: "left" },
         { to: "/support", label: "Support", position: "left" },
         {
-          href: 'https://github.com/doublewordai/control-layer',
+          href: 'https://github.com/doublewordai/control-layer-public',
           position: 'right',
           className: 'header-github-link control-layer-github',
           label: 'Control Layer',
